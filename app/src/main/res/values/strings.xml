@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Lemontee Kstore</string>
+    <string name="idnama">Nama</string>
+    <string name="msname">Masukkan Nama</string>
+    <string name="idnomor">ID</string>
+    <string name="msnomor">Masukkan ID</string>
+    <string name="btsignin">Sign-In</string>
+    <string name="btsignup">Sign-Up</string>
+    <string name="lgadmin">Login as Admin</string>
+    <string name="idregis">REGISTRASI</string>
+    <string name="inama">Nama</string>
+    <string name="enama">Masukkan Nama</string>
+    <string name="inomor">ID</string>
+    <string name="enomor">Masukkan ID</string>
+    <string name="btregis">Registrasi</string>
+</resources>
