@@ -12,13 +12,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    public static Object ma;
     //Deklarasi variabel untuk button
-    Button btnSignin;
-    Button btnSignup;
+    Button btnSigninb;
+    Button btnSignupb;
 
     //Deklarasi variabel untuk EditText
-    EditText edNama, edId;
+    EditText edNamab, edIdb;
 
     //Deklarasi untuk textview
     TextView adminlink;
@@ -38,20 +37,29 @@ public class MainActivity extends AppCompatActivity {
         loading = new ProgressDialog(this);
 
         //Menghubungkan variabel btnSignin dan btnSignup dengan componen button pada layout
-        btnSignin = findViewById(R.id.btsignin);
-        btnSignup = findViewById(R.id.btsignup);
+        btnSigninb = findViewById(R.id.btsigninb);
+        btnSignupb = findViewById(R.id.btsignupb);
 
         //Menghubungkan variabel edNama dengan componen button pada layout
-        edNama = findViewById(R.id.editnama);
+        edNamab = findViewById(R.id.editnamab);
 
         //Menghubungkan variabel edid dengan componen button pada layout
-        edId = findViewById(R.id.editid);
+        edIdb = findViewById(R.id.editidb);
 
         //menghubungkan variabel adminlink dengan button di layout
         adminlink = findViewById(R.id.lgadmin);
 
+        //membuat fungsi one klik pada button adminlink
+        adminlink.setOnClickListener(new View.OnClickListener() {
+           @Override
+            public void onClick(View view) {
+               Intent login = new Intent(getApplicationContext(), signin_admin.class);
+               startActivity(login);
+           }
+        });
+
         //membuat fungsi one klik pada button btnsignup
-        btnSignup.setOnClickListener(new View.OnClickListener() {
+        btnSignupb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent login = new Intent(getApplicationContext(), Register.class);
@@ -59,46 +67,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //membuat fungsi one klik pada button adminlink
-        adminlink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                btnSignin.setText("Login Admin");
-                btnSignup.setText("Signup Admin");
-                adminlink.setVisibility(View.INVISIBLE);
-            }
-        });
-        btnSignin.setOnClickListener(new View.OnClickListener() {
-            private Intent b;
-
-            @Override
-            public void onClick(View view) {
-                Intent loginb = new Intent(getApplicationContext(), Home.class);
-                loginb.putExtras(b);
-                startActivity(loginb);
-            }
-        });
-
-
         //membuat fungsi one klik pada button btnSignin
-        btnSignin.setOnClickListener(new View.OnClickListener() {
+        btnSigninb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Menyimpan input user di edittext nama kedalam variabel nama
-                nama = edNama.getText().toString();
+                nama = edNamab.getText().toString();
 
                 //Menyimpan input user di edittext id kedalam variabel id
-                id = edId.getText().toString();
+                id = edIdb.getText().toString();
 
                 //membuat variabel toast dan membuat toast dengan menambahkan variabel nama dan id
                 Toast t = Toast.makeText(getApplicationContext(),
                         "Nama anda: " + nama + " dan ID anda: " + id + "", Toast.LENGTH_LONG);
-                Bundle b = new Bundle();
-                b.putString("a", nama.trim());
+                Bundle a = new Bundle();
 
-                Intent login = new Intent(getApplicationContext(), Home_User.class);
-                login.putExtras(b);
-                startActivity(login);
+                a.putString("a", nama.trim());
+
+                Intent loginb = new Intent(getApplicationContext(), user_home.class);
+                startActivity(loginb);
 
                 //memvalidasi inputan user dan menampilkan loading bar
                 if (nama.isEmpty()) {

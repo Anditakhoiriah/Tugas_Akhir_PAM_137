@@ -2,7 +2,6 @@ package com.example.lemonteekstore;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,42 +10,58 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Register extends AppCompatActivity {
+public class signin_admin extends AppCompatActivity {
     //Deklarasi variabel untuk button
-    Button btnregister;
+    Button btnSignina;
+    Button btnSignupa;
 
     //Deklarasi variabel untuk EditText
-    EditText edinama, ediid;
+    EditText edNama, edId;
 
-    //Deklarasi variabel untuk menyimpan nama dan id
+    //Deklarasi variabel untuk menyimpan email dan password
     String nama, id;
 
+    //deklarasi variabel untuk loading bar
     private ProgressDialog loading;
-    private ActionBar t;
 
+    //Andita Khoiriah 20200140137
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_signin_admin);
 
         loading = new ProgressDialog(this);
 
-        //Menghubungkan variabel edinama dengan componen button pada layout
-        edinama = findViewById(R.id.enama);
+        //Menghubungkan variabel btnSignin dan btnSignup dengan componen button pada layout
+        btnSignina = findViewById(R.id.btsignina);
+        btnSignupa = findViewById(R.id.btsignupa);
 
-        //Menghubungkan variabel ediid dengan componen button pada layout
-        ediid = findViewById(R.id.eid);
-        btnregister = findViewById(R.id.btregis);
+        //Menghubungkan variabel edNama dengan componen button pada layout
+        edNama = findViewById(R.id.editnamaa);
+
+        //Menghubungkan variabel edid dengan componen button pada layout
+        edId = findViewById(R.id.editida);
+
+
+        //membuat fungsi one klik pada button btnsignup
+        btnSignupa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent login = new Intent(getApplicationContext(), Register.class);
+                startActivity(login);
+            }
+        });
+
 
         //membuat fungsi one klik pada button btnSignin
-        btnregister.setOnClickListener(new View.OnClickListener() {
+        btnSignina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Menyimpan input user di edittext nama kedalam variabel nama
-                nama = edinama.getText().toString();
+                nama = edNama.getText().toString();
 
                 //Menyimpan input user di edittext id kedalam variabel id
-                id = ediid.getText().toString();
+                id = edId.getText().toString();
 
                 //membuat variabel toast dan membuat toast dengan menambahkan variabel nama dan id
                 Toast t = Toast.makeText(getApplicationContext(),
@@ -55,11 +70,14 @@ public class Register extends AppCompatActivity {
 
                 b.putString("a", nama.trim());
 
+                Intent login = new Intent(getApplicationContext(), Home.class);
+                startActivity(login);
+
                 //memvalidasi inputan user dan menampilkan loading bar
                 if (nama.isEmpty()) {
-                    Toast.makeText(Register.this, "Login Gagal", Toast.LENGTH_LONG).show();
+                    Toast.makeText(signin_admin.this, "Login Gagal", Toast.LENGTH_LONG).show();
                 } else if (id.isEmpty()) {
-                    Toast.makeText(Register.this, "Login Sukses", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(signin_admin.this, "Login Sukses", Toast.LENGTH_SHORT).show();
                 } else {
                     loading.setTitle("Please wait");
                     loading.setMessage("wait for a moment..");
@@ -69,9 +87,6 @@ public class Register extends AppCompatActivity {
                     //Menampilkan toast
                     t.show();
                 }
-                Intent intent = new Intent(Register.this, user_home.class);
-                startActivity(intent);
-
             }
         });
     }

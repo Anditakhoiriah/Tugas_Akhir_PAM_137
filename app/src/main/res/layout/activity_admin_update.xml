@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cream"
     android:orientation="vertical"
     android:padding="14dp"
     tools:context=".Admin_Update">
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_gravity="center"
         android:layout_width="160dp"
         android:layout_height="160dp"
+        android:layout_gravity="center"
         android:layout_marginBottom="40dp"
         app:srcCompat="@drawable/books" />
 
@@ -25,9 +26,11 @@
             android:id="@+id/ednama_album"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/cardview_light_background"
+            android:background="@color/green4"
             android:hint="Nama Album"
-            android:inputType="textCapWords" />
+            android:inputType="textCapWords"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -40,9 +43,12 @@
             android:id="@+id/edstok"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/cardview_light_background"
+            android:background="@color/green4"
+            android:hapticFeedbackEnabled="false"
             android:hint="Stok"
-            android:inputType="textCapSentences" />
+            android:inputType="textCapSentences"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -55,10 +61,12 @@
             android:id="@+id/edharga"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/green4"
             android:hint="Harga"
             android:inputType="numberDecimal"
-            android:background="@color/cardview_light_background"
-            android:layout_marginBottom="10dp"/>
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

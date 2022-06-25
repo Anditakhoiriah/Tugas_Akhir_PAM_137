@@ -7,25 +7,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Home extends AppCompatActivity {
+public class user_home extends AppCompatActivity {
+
     //Deklarasi variabel untuk button
-    Button btdata;
+    Button btalbum;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_user_home);
 
-        btdata = findViewById(R.id.btnaddalbum);
+        btalbum = findViewById(R.id.btnalbum);
 
-        Bundle a = new Bundle();
 
-        btdata.setOnClickListener(new View.OnClickListener() {
+        btalbum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent data = new Intent(Home.this, DataAlbum.class);
+                Intent data = new Intent(user_home.this, list_album.class);
                 startActivity(data);
             }
         });
+
     }
 }

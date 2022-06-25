@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cream"
-    tools:context=".MainActivity">
+    tools:context=".signin_admin">
 
     <ImageView
         android:id="@+id/imageView"
@@ -35,7 +35,7 @@
         app:layout_constraintVertical_bias="0.044" />
 
     <EditText
-        android:id="@+id/editnamab"
+        android:id="@+id/editnamaa"
         android:layout_width="377dp"
         android:layout_height="38dp"
         android:background="@color/green4"
@@ -62,11 +62,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editnamab"
-        app:layout_constraintVertical_bias="0.078" />
+        app:layout_constraintTop_toBottomOf="@+id/editnamaa"
+        app:layout_constraintVertical_bias="0.1" />
 
     <EditText
-        android:id="@+id/editidb"
+        android:id="@+id/editida"
         android:layout_width="371dp"
         android:layout_height="42dp"
         android:background="@color/green4"
@@ -76,48 +76,40 @@
         android:textColorHint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id"
-        app:layout_constraintVertical_bias="0.053" />
+        app:layout_constraintVertical_bias="0.062" />
 
     <Button
-        android:id="@+id/btsignupb"
+        android:id="@+id/btsignupa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="60dp"
-        android:text="@string/btsignup"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="56dp"
+        android:text="sign-up admin"
         app:backgroundTint="#BC7406"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editidb"
-        app:layout_constraintVertical_bias="0.254" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btsignina"
+        app:layout_constraintTop_toBottomOf="@+id/editida"
+        app:layout_constraintVertical_bias="0.992" />
 
     <Button
-        android:id="@+id/btsigninb"
+        android:id="@+id/btsignina"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btsignin"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:text="login admin"
         app:backgroundTint="#BC7406"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btsignupb"
-        app:layout_constraintHorizontal_bias="0.365"
+        app:layout_constraintHorizontal_bias="0.604"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editidb"
-        app:layout_constraintVertical_bias="0.254" />
+        app:layout_constraintTop_toBottomOf="@+id/editida"
+        app:layout_constraintVertical_bias="0.701" />
 
-    <TextView
-        android:id="@+id/lgadmin"
-        android:layout_width="152dp"
-        android:layout_height="38dp"
-        android:scrollbarSize="7dp"
-        android:text="@string/lgadmin"
-        android:textColor="#0B3C0D"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btsignupb" />
 </androidx.constraintlayout.widget.ConstraintLayout>

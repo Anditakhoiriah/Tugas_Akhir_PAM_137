@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LemonteeKstore">
         <activity
+            android:name=".signin_admin"
+            android:exported="false" />
+        <activity
+            android:name=".user_home"
+            android:exported="false" />
+        <activity
+            android:name=".list_album"
+            android:exported="false" />
+        <activity
             android:name=".DataAlbum"
             android:exported="false" />
         <activity
@@ -26,9 +35,6 @@
             android:exported="false" />
         <activity
             android:name=".Admin_Add"
-            android:exported="false" />
-        <activity
-            android:name=".Home_User"
             android:exported="false" />
         <activity
             android:name=".Home"

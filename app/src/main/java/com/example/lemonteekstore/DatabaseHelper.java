@@ -96,15 +96,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqld.execSQL("DELETE FROM album" );
     }
 
-    //method getAllPengeluaran tipe ArrayList
+    //method getAllalbum tipe ArrayList
     public ArrayList<HashMap<String, String>> getAllalbum() {
         //membuat objek Listalbum berjenis ArrayList
         ArrayList<HashMap<String, String>> Listalbum;
+
         Listalbum = new ArrayList<HashMap<String, String>>();
         //query untuk menampilkan semua data dari tabel album
         String selectQuery = "Select * from album";
+
         //memanggil database agar dapat dilihat isi database-nya
         SQLiteDatabase sqld = this.getReadableDatabase();
+
         //rawQuery untuk mengirimkan perintah selectQuery kemudian disimpan dalam cursor
         Cursor cursor = sqld.rawQuery(selectQuery, null);
         //posisi cursor pada record pertama

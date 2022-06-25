@@ -32,15 +32,15 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintHorizontal_bias="0.046"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <EditText
         android:id="@+id/enama"
-        android:layout_width="241dp"
-        android:layout_height="44dp"
+        android:layout_width="389dp"
+        android:layout_height="47dp"
         android:background="@color/green4"
         android:ems="10"
         android:hint="@string/enama"
@@ -65,15 +65,15 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enama"
-        app:layout_constraintVertical_bias="0.119" />
+        app:layout_constraintVertical_bias="0.121" />
 
     <EditText
         android:id="@+id/eid"
-        android:layout_width="246dp"
-        android:layout_height="40dp"
+        android:layout_width="383dp"
+        android:layout_height="46dp"
         android:background="@color/green4"
         android:ems="10"
         android:hint="@string/enomor"
@@ -81,10 +81,10 @@
         android:textColorHint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.296"
+        app:layout_constraintHorizontal_bias="0.214"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id"
-        app:layout_constraintVertical_bias="0.114" />
+        app:layout_constraintVertical_bias="0.078" />
 
     <Button
         android:id="@+id/btregis"

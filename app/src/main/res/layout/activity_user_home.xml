@@ -5,28 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cream"
-    tools:context=".Home">
+    tools:context=".user_home">
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="232dp"
-        android:layout_height="59dp"
-        android:text="ADMIN MENU"
+        android:layout_width="128dp"
+        android:layout_height="63dp"
+        android:text="MENU"
         android:textColor="#FF5722"
-        android:textSize="35dp"
+        android:textSize="40dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.089" />
+        app:layout_constraintVertical_bias="0.088" />
 
     <Button
-        android:id="@+id/btnaddalbum"
+        android:id="@+id/btnalbum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Update Data Album"
+        android:text="Data Album"
         app:backgroundTint="#FF5722"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

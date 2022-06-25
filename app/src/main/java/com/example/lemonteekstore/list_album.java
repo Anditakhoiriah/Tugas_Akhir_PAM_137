@@ -18,7 +18,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class DataAlbum extends AppCompatActivity {
+public class list_album extends AppCompatActivity {
     //deklarasi variabel recyclerview
     private RecyclerView recyclerView;
     //deklarasi adapter
@@ -45,7 +45,7 @@ public class DataAlbum extends AppCompatActivity {
         //membuat objek adapter berupa arraylist
         adapter = new Adapter(albumArrayList);
         //membuat objek layoutmanager berupa linearlayout
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(DataAlbum.this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(list_album.this);
         //mengeset layoutmanager
         recyclerView.setLayoutManager(layoutManager);
         //mengeset adapter
@@ -54,8 +54,8 @@ public class DataAlbum extends AppCompatActivity {
         buttonadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //membuat objek intent untuk berpindah ke class admin add
-                Intent intent = new Intent(DataAlbum.this, Admin_Add.class);
+                //membuat objek intent untuk berpindah ke class order
+                Intent intent = new Intent(list_album.this, User_Order.class);
                 //memulai berpindah
                 startActivity(intent);
             }
@@ -80,58 +80,5 @@ public class DataAlbum extends AppCompatActivity {
             //memindahkan semua yang ada pada pengeluaran ke albumArrayList
             albumArrayList.add(album);
         }
-    }
-
-    //membuat option menu delete
-    public boolean onCreateOptionsMenu(Menu menu) {
-        //membuat objek inflater
-        MenuInflater inflater = getMenuInflater();
-        //method untuk menampilkan menu
-        inflater.inflate(R.menu.itemdelete, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    //apabila menu di klik
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        //apabila menu delete di klik
-        if (item.getItemId() == R.id.deleteic) {
-            //memanggil method confirmAlert
-            confirmAlert();
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    void confirmAlert() {
-        //membuat alertdialog dengan nama builder
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        //membuat judul pada alert
-        builder.setTitle("HAPUS SEMUA DATA ALBUM");
-        //membuat isi dari alert
-        builder.setMessage("Anda yakin ingin menghapus semua data album?");
-        //apabila klik Ya pada alert
-        builder.setPositiveButton("Ya", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                //memanggil class DatabaseHelper
-                DatabaseHelper dbhelp = new DatabaseHelper(DataAlbum.this);
-                //memanggil method deleteall pada DatabaseHelper
-                dbhelp.deleteall();
-                //membuat objek intent untuk berpindah ke class DataPengeluaran
-                Intent intent = new Intent(DataAlbum.this, DataAlbum.class);
-                //memulai berpindah
-                startActivity(intent);
-                //mengakhiri activity
-                finish();
-            }
-        });
-        //apabila klik Tidak pada alert
-        builder.setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                //menutup alert dialog dan tidak terjadi apa-apa
-            }
-        });
-        builder.create().show(); //membuat dan menampilkan alert
     }
 }
